@@ -7,7 +7,7 @@ Dedicated to those of us still living in the world of subversion :)
 
 At Outbrain we use [Glu](https://github.com/linkedin/glu) for continious deployment where folks need only commit by adding #deploy:module to thier commit message.
 
-Here we have more and more developers writing cookbooks (YAY!) and I wanted to make it was dead simple for them to work with Chef using the same workflow they use in thier other projects. 
+Here we have more and more developers writing cookbooks (YAY!) and I wanted to make it dead simple for them to work with Chef using the same workflow they use in thier other projects. 
 
 ## Usage:
 

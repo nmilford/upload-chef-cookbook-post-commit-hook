@@ -49,7 +49,7 @@ FATAL: Cookbook file recipes/foobar.rb has a ruby syntax error:
 FATAL: /var/tmp/myCookbook/recipes/foobar.rb:38: syntax error, unexpected $end, expecting keyword_end
 ```
 
-Note, this assumes your subversion username is the same as your email username and only works from your main subversion server, if you are running this from a downstream svnsync replica it will think the commits is svnsync :/
+Note, this assumes your subversion username is the same as your email username and only works from your main subversion server, if you are running this from a downstream svnsync replica it will think the committer is svnsync :/
 
 The script is also setup to hit graphite so you can [overlay events on metrics](http://codeascraft.etsy.com/2010/12/08/track-every-release/)
 
@@ -79,6 +79,10 @@ Drop your client key in the path you set above so knife can validate itself to t
 More info on this process is in the [Opscode wiki](http://wiki.opscode.com/display/chef/Knife#Knife-ConfiguringYourSystemForKnife)
 
 Also, don't forget to make it r+w for the user post-commit hooks run as, probably apache or www-data.
+
+Grab the script and drop it in your repository's `hooks` directory and make it executable by the subversion user.
+
+This works with Python 2.4, but you'll need to install [pysvn](http://pysvn.tigris.org/).  It is avaliable from yum and apt, but if you're running a version of subversion not in the normal repositores you'll need to build it.
 
 Now update the variables at the head of the script:
 
